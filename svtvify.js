@@ -6,7 +6,7 @@ function setOverlay(thumb) {
     overlay.style.position = "absolute";
     overlay.style.top = "0px";
     overlay.style.left = "0px";
-    const picId = Math.round(Math.random() * (13-1) + 1);
+    const picId = Math.round(Math.random() * (18-1) + 1);
     overlay.src = browser.runtime.getURL(`images/${picId}.png`);
     thumb.parentElement.appendChild(overlay);
 }
