@@ -11,7 +11,11 @@ function setOverlay(thumb) {
     thumb.parentElement.appendChild(overlay);
 }
 
-setTimeout(() => {
-  const thumbs = document.querySelectorAll("a#thumbnail img");
-  Array.from(thumbs).forEach(setOverlay)
-}, 2000)
+function processThumbs(processed) {
+  const thumbs = Array.from(document.querySelectorAll("a#thumbnail img:first-child"));
+  const unprocessedThumbs = thumbs.slice(processed);
+  unprocessedThumbs.forEach(setOverlay);
+  setTimeout(() => processThumbs(thumbs.length), 200)
+}
+
+processThumbs(0);

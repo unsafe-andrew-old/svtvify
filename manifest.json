@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
   "name": "SVTVify",
-  "version": "1.1",
+  "version": "2.0",
   "description": "Расширение, которое добавит к вашим превью видео на YouTube Светова, а иногда даже и Кашина",
+  "author": "@unsafe_andrew",
   "icons": {
     "48": "icons/48.png"
   },
