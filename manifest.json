@@ -1,19 +1,29 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "SVTVify",
-  "version": "2.1",
-  "description": "Расширение, которое добавит к вашим превью видео на YouTube Светова, а иногда даже и Кашина",
+  "version": "2.2",
+  "description": "Расширение, которое добавит к вашим превью видео на YouTube Светова, а иногда даже и Кашина (а иногда ещё и Штефанова)",
   "author": "@unsafe_andrew",
   "icons": {
     "48": "icons/48.png"
   },
-  "permissions": ["*://www.youtube.com/*"],
+  "host_permissions": ["*://www.youtube.com/*"],
   "content_scripts": [{
     "matches": ["*://www.youtube.com/*"],
     "js": ["svtvify.js"],
     "run_at": "document_end"
   }],
   "web_accessible_resources": [
-    "images/*.png"
-  ]
+    {
+      "resources": [
+        "images/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{c95e94b3-de74-4466-88a2-58a15e40b738}"
+    }
+  }
 }
